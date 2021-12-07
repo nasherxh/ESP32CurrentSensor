@@ -41,6 +41,9 @@
 //Libraries for RTC Module
   #include "RTClib.h"
   RTC_DS3231 rtc;
+  //Variables to save date and time for RTC
+  String dateStamp;
+  String timeStamp;
 
 // Save reading number on ESP32 RTC memory
   RTC_DATA_ATTR int readingID = 0;
@@ -177,10 +180,9 @@ void setUpRTC(){
 
 // Function to get date and time from RTC module
 void getTimeStamp() {
-
-  //get time and date from RTC module
-    rtc.now().toString(dateStamp);
-    rtc.now().toString(timeStamp);
+    DateTime time = rtc.now();
+    dateStamp = time.timestamp(DateTime::TIMESTAMP_DATE);
+    timeStamp = time.timestamp(DateTime::TIMESTAMP_TIME);
 }
 
 //set Up SD Card. Write data headings if new file.
