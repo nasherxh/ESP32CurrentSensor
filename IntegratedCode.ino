@@ -289,8 +289,7 @@ void appendFile(fs::FS &fs, const char * path, const char * message) {
 void updateThingSpeak(){
   //set what we want each ThingsSpeak fields and statuses to be updated to 
   ThingSpeak.setField(1,I_AC100);
-
-  ThingSpeak.setStatus("no dump load triggered");
+  
   // write to the ThingSpeak channel
   int x = ThingSpeak.writeFields(myChannelNumber, myWriteAPIKey);
   if(x == 200){
