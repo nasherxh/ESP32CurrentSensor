@@ -33,11 +33,6 @@
   const char* ssid     = "Smart Village-Ormoti";//"iPhone XR";
   const char* password = "sm@rtvill@ge";//"smartvils";
 
-
-//Variabls to save date and time for RTC
-  char dateStamp[] = "YYYY-MM-DD";
-  char timeStamp[] = "hh:mm:ss";
-  
 //Libraries for RTC Module
   #include "RTClib.h"
   RTC_DS3231 rtc;
